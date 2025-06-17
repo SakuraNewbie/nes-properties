@@ -1,0 +1,37 @@
+{
+  "name": "nes-properties",
+  "version": "1.0.0",
+  "description": "MERN Stack E-Commerce Application",
+  "author": "Your Name",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && npm start",
+    "frontend": "cd frontend && npm start",
+    "dev": "concurrently -n \"BACKEND,FRONTEND\" -c \"bgBlue.bold,bgGreen.bold\" \"npm run backend:dev\" \"npm run frontend\"",
+    "backend:dev": "cd backend && npm run dev",
+    "frontend:dev": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "test": "concurrently \"cd backend && npm test\" \"cd frontend && npm test\"",
+    "lint": "eslint \"{backend,frontend}/src/**/*.{js,jsx}\"",
+    "format": "prettier --write \"{backend,frontend}/**/*.{js,jsx,json,css,scss}\"",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.33.2",
+    "husky": "^8.0.3",
+    "prettier": "^3.5.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "dependencies": {
+    "react-router-dom": "^7.6.0"
+  }
+}
